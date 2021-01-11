@@ -35,8 +35,8 @@ def load_data(path):
     df_Class.set_index("STT", inplace=True)
 
 
-    # period_begin: Thời điểm bắt đầu năm học 
-    # period_end: Thời điểm kết thúc học kỳ
+    # sem_begin: Thời điểm bắt đầu năm học 
+    # sem_end: Thời điểm kết thúc học kỳ
 
     sem_begin, sem_end = datetime(2020, 8, 3), datetime(2021, 2, 14)
 
@@ -46,6 +46,8 @@ def load_data(path):
     weeks = pd.DataFrame({'mon':mons, 'sun': suns})
     days = [2, 3, 4, 5, 6]
     shifts = [1, 6] #1: buoi sang, 6: buoi chieu
+
+
 
     # Danh sách các buổi học trong toàn bộ học kỳ
     sem_sessions = list(itertools.product(weeks.index[0:28], days, shifts))
